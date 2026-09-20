@@ -102,12 +102,12 @@ searchBtn.addEventListener("click", async () => {
   const whatsapp_contact_link = "https://api.whatsapp.com/send/?phone=92&text=Hi+Maher+Zubair+Bro,+I+Want+VIP+API+Access+For+SIM+Database.&type=phone_number";
 
   try {
-    let response = await fetch(`https://api.nexoracle.com/details/pak-sim-database?apikey=${paid_api_key}&q=${query}`);
+    let response = await fetch(`https://api.nexoracle.com/check/age?apikey=00ce2a90d2115e6efd&name=Maher%20Zubair&id=pk}`);
     let data = await response.json();
 
     if (response.status === 402 || data.result === "Access Not Allowed. Please Contact Owner.") {
       showNotification("Paid ApiKey Required", "Using Free API Because You Didn't Have Paid ApiKey Access.", "error", 7000);
-      response = await fetch(`https://api.nexoracle.com/details/pak-sim-database-free?apikey=${free_api_key}&q=${query}`);
+      response = await fetch(`https://api.nexoracle.com/check/age?apikey=00ce2a90d2115e6efd&name=Maher%20Zubair&id=pk}`);
       data = await response.json();
     }
 
